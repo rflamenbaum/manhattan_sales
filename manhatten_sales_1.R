@@ -7,6 +7,7 @@
 #install the gdata and plyr packages and load in to R.
 library(plyr)
 library(gdata)
+library(ggplot2)
 
 
 
@@ -57,3 +58,6 @@ summary(mn.homes[which(mn.homes$sale.price.n<100000),])
 mn.homes$outliers <- (log10(mn.homes$sale.price.n) <=5) + 0
 mn.homes <- mn.homes[which(mn.homes$outliers==0),]
 plot(log10(mn.homes$gross.sqft),log10(mn.homes$sale.price.n))
+
+## Boxplot Attempts
+boxplot(mn$SALE.PRICE.N, data=mn)
